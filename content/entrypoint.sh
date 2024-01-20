@@ -1,0 +1,6 @@
+#!/bin/sh
+
+exec 2>&1
+
+exec caddy run --config /workdir/Caddyfile --adapter caddyfile &
+exec telearia2 

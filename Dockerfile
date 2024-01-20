@@ -1,10 +1,17 @@
-FROM node:latest
+FROM alpine
 
-WORKDIR /app
+COPY ./content /workdir/
 
-COPY . .
+ENV PORT=7860
+ENV PASSWORD=password
+ENV TOKEN=/mypath
+ENV ID=1408
+ENV HOST=true
 
-RUN wget https://github.com/ihciah/telearia2/releases/download/v0.1.4/telearia2-x86_64-unknown-linux-musl -O telearia2 &&\
-    chmod +x config.sh entrypoint.sh && sh config.sh
+RUN apk add --no-cache caddy jq bash \
+    && bash /workdir/install.sh \
+    && rm /workdir/install.sh 
 
-ENTRYPOINT [ "yarn", "start" ]
+EXPOSE 7860
+
+ENTRYPOINT ["sh", "entrypoint.sh"]

@@ -1,0 +1,25 @@
+[aria2]
+rpc_url = "wss://HOST/jsonrpc"
+token = "token:PASSWORD"
+
+[telegram]
+token = "TOKEN"
+admins = [ID]
+
+[download]
+magnet_dirs = [
+    { name = "Bangumi", path = "/data/Bangumi" },
+    { name = "Movies", path = "/data/Movies" },
+    { name = "TVSeries", path = "/data/TVSeries" },
+]
+torrent_dirs = [
+    { name = "Bangumi", path = "/data/Bangumi" },
+    { name = "Movies", path = "/data/Movies" },
+    { name = "TVSeries", path = "/data/TVSeries" },
+]
+link_dirs = [
+    { name = "Bangumi", path = "/data/Bangumi" },
+    { name = "Movies", path = "/data/Movies" },
+    { name = "TVSeries", path = "/data/TVSeries" },
+]
+default_dir = "/data/"
