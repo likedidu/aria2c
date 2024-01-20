@@ -1,5 +1,3 @@
 #!/usr/bin/env bash
 
-set -X 
-
-telearia2 &
+telearia2 
